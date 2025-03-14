@@ -16,7 +16,7 @@ This amazing [Video about Game Theory and the Prisoner's Dilemma](https://www.yo
 
 ## Prerequisites
 
-- Have [Python 3.6](https://www.python.org/downloads/) or higher installed.
+- Have [Python 3.12](https://www.python.org/downloads/) or higher installed.
 
 ## Instructions
 

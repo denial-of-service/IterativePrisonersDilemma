@@ -23,7 +23,7 @@ matches_per_pair_of_opponents: int = 50
 rounds_per_match: int = 500
 misunderstanding_probability: float = 0.05
 
-
+# Simulates the competition between the prisoners.
 def main() -> None:
     prisoner_classes: list[Prisoner] = [Alternate, AveragedTitForTat, Bully, Envy, EvilTitForTat, Evolution,
                                         ForgivingTitForTat, InverseEnvy, InverseTitForTat, Jesus, Random, Satan,
@@ -44,16 +44,16 @@ def main() -> None:
             # Play 'rounds_per_match' rounds per match.
             for j in range(rounds_per_match):
                 perceived_decision_a: Decision = decision_a
-                # There is a 'misunderstanding_probability' probability that a prisoner misunderstands his opponents choice.
+                # There is a 'misunderstanding_probability' probability that a prisoner misunderstands his opponent's choice.
                 if random.random() < misunderstanding_probability:
                     # Prisoner b has misunderstood Prisoner a's decision
                     perceived_decision_a = opposite(decision_a)
                 perceived_decision_b: Decision = decision_b
-                # There is a 'misunderstanding_probability' probability that a prisoner misunderstands his opponents choice.
+                # There is a 'misunderstanding_probability' probability that a prisoner misunderstands his opponent's choice.
                 if random.random() < misunderstanding_probability:
                     # Prisoner a has misunderstood Prisoner b's decision
                     perceived_decision_b = opposite(decision_b)
-                # The Prisoners are told about their opponents choice int the previous round and make their decision.
+                # The Prisoners are told about their opponent's choice in the previous round and make their decision.
                 decision_a = prisoner_a.decision(decision_a, perceived_decision_b)
                 decision_b = prisoner_b.decision(decision_b, perceived_decision_a)
                 # Evaluate how many points each prisoner earned this round and add them to their respective total.

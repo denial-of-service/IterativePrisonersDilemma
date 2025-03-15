@@ -5,6 +5,7 @@ from Prisoner import Prisoner
 class InverseEnvy(Prisoner):
     wins_delta_to_opponent: int = 0
 
+    # Cooperates as long as he has fewer points than his opponent.
     def decision(self, my_previous_decision: Decision, opponents_previous_decision: Decision) -> Decision:
         if my_previous_decision == Decision.Cooperate:
             if opponents_previous_decision == Decision.Defect:

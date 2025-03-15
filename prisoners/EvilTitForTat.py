@@ -5,6 +5,8 @@ from Prisoner import Prisoner
 
 
 class EvilTitForTat(Prisoner):
+
+    # Plays Tit for Tat but occasionally defects against a cooperating opponent.
     def decision(self, my_previous_decision: Decision, opponents_previous_decision: Decision) -> Decision:
         if opponents_previous_decision == Decision.Defect:
             return Decision.Defect

@@ -6,6 +6,7 @@ class AveragedTitForTat(Prisoner):
     is_first_round: bool = True
     opponent_cooperation_to_defection_delta: int = 0
 
+    # His decision is the average decision of his opponent.
     def decision(self, my_previous_decision: Decision, opponents_previous_decision: Decision) -> Decision:
         if self.is_first_round:
             self.is_first_round = False

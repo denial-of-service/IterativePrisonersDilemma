@@ -5,6 +5,7 @@ from Prisoner import Prisoner
 class TitForTwoTats(Prisoner):
     opponents_decision_two_rounds_ago: Decision = Decision.Cooperate
 
+    # Only defects if the opponent defected in the previous two rounds.
     def decision(self, my_previous_decision: Decision, opponents_previous_decision: Decision) -> Decision:
         decision: Decision = Decision.Cooperate
         # Opponent defected in the previous two rounds

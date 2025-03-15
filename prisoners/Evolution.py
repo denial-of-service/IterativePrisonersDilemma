@@ -8,6 +8,7 @@ class Evolution(Prisoner):
     points: int = 0
     round_count_using_strategy: int = 0
 
+    # The fewer average points he earned using the same decision, the more likely he is to change his decision.
     def decision(self, my_previous_decision: Decision, opponents_previous_decision: Decision) -> Decision:
         self.round_count_using_strategy += 1
         if my_previous_decision == Decision.Cooperate:

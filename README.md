@@ -20,5 +20,5 @@ This amazing [Video about Game Theory and the Prisoner's Dilemma](https://www.yo
 
 ## Instructions
 
-1. [Clone the repository](https://github.com/denial-of-service/UpdateWindowsApplications/archive/refs/heads/master.zip).
+1. [Clone the repository](https://github.com/denial-of-service/IterativePrisonersDilemma/archive/refs/heads/master.zip).
 1. Execute the `main.py` file.

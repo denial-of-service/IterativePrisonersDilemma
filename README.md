@@ -6,7 +6,7 @@ Each prisoner plays matches against each other prisoner (and against themselves)
 Each match is played by two prisoners and consists of multiple rounds.
 During a single round, each prisoner has to choose between cooperating and defecting.
 Each prisoner uses a different strategy to decide whether to cooperate or defect.
-The amount of points each prisoner earns depends on their own choice and the opponents choice:
+The amount of points each prisoner earns depends on their own choice and the opponent's choice:
 
 - If both prisoners cooperate, they both receive 3 points.
 - If both prisoners defect, they both receive 1 point.
@@ -16,7 +16,7 @@ This amazing [Video about Game Theory and the Prisoner's Dilemma](https://www.yo
 
 ## Prerequisites
 
-- Have [Python 3.12](https://www.python.org/downloads/) or higher installed.
+- Have [Python 3.13](https://www.python.org/downloads/) or higher installed.
 
 ## Instructions
 

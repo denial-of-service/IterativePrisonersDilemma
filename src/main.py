@@ -19,9 +19,10 @@ from prisoners.TitForTat import TitForTat
 from prisoners.TitForTwoTats import TitForTwoTats
 from prisoners.Vengeance import Vengeance
 
-matches_per_pair_of_opponents: int = 50
+matches_per_opponent: int = 50
 rounds_per_match: int = 500
 misunderstanding_probability: float = 0.05
+
 
 # Simulates the competition between the prisoners.
 def main() -> None:
@@ -34,7 +35,7 @@ def main() -> None:
     # Each prisoner plays against himself and everyone else.
     for class_a, class_b in itertools.combinations_with_replacement(prisoner_classes, 2):
         # Play 'matches_per_pair_of_opponents' matches against each opponent.
-        for i in range(matches_per_pair_of_opponents):
+        for i in range(matches_per_opponent):
             # The two participants in the match.
             prisoner_a: Prisoner.Prisoner = class_a()
             prisoner_b: Prisoner.Prisoner = class_b()
@@ -76,10 +77,11 @@ def main() -> None:
         key=lambda pair: pair[1],
         reverse=True
     )
+
+    total_rounds: int = len(prisoner_classes) * matches_per_opponent * rounds_per_match
     # Print the results of the competition, rank prisoners from best to worst.
     for prisoner_class, points in prisoner_sorted_points:
-        average_points_per_round: float = round(
-            (points / (len(prisoner_classes) * matches_per_pair_of_opponents * rounds_per_match)), 2)
+        average_points_per_round: float = round(points / total_rounds, 2)
         print(f'{prisoner_class.__name__} | total: {points} | average: {average_points_per_round}')
 
 
